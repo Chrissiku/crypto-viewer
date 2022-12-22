@@ -1,19 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import { Box, Container, Flex, Heading, Select } from "@chakra-ui/react";
-
+import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
   const { supportedCurrencies, setCurrency } = useAppContext();
-
   return (
     <Box py={{ base: 3, md: 5 }}>
       <Container maxW="container.xl">
         <Flex align="center" justify="space-between">
-          <Heading fontSize="1.5rem" fontWeight="600" color="blue.400">
-            <Link to="/">CryptoGazer</Link>
+          <Heading fontSize="1.5rem" fontWeight="600" color="red.400">
+            <Link to="/">Crypto Viewer</Link>
           </Heading>
           <Box>
             <Select
@@ -24,7 +21,7 @@ const Header = () => {
                   )[0]
                 )
               }
-              colorScheme="blue.700"
+              colorScheme="red.700"
             >
               {supportedCurrencies.map((currency, i) => (
                 <option
